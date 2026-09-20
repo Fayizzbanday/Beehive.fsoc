@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "beehive-api-local",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-06",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    }
+  },
+  "vars": {
+    "APP_URL": "http://localhost:5174",
+    "DEMO_MODE": "true",
+    "EVM_RPC_URL": "http://127.0.0.1:8545",
+    "CHAIN_ID": "31337",
+    "CONTRACT_ADDRESS": "",
+    "BLOCK_EXPLORER_URL": "",
+    "NETWORK_NAME": "Local EVM (Hardhat)"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "beehive-db",
+      "database_id": "00000000-0000-0000-0000-000000000001",
+      "migrations_dir": "../../migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "beehive-evidence-local"
+    }
+  ]
+}
